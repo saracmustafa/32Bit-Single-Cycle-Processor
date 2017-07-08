@@ -1,0 +1,31 @@
+MAIN: 
+
+add $3, $zero, $zero
+
+lw $24, 0(0x00)
+
+lw $25, 0(0x01)
+
+lw $8,  0(0x02)
+
+Label: 
+
+lw $1, 0(0x00)
+
+add $8, $8, $25   ; increment array adress
+
+lw $2, 0(0x00)
+
+add $2, $2, $25
+
+mult $2, $1, $2
+
+add $3, $3, $2
+
+slt $9, $3, $24
+
+beq $9, $0, Label
+
+j exit
+
+Exit: 
